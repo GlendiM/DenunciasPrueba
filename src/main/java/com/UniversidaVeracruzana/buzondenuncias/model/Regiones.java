@@ -1,6 +1,6 @@
-package com.UniversidaVeracruzana.model;
+package com.UniversidaVeracruzana.buzondenuncias.model;
 
-import com.UniversidaVeracruzana.enums.TipoRegiones;
+import com.UniversidaVeracruzana.buzondenuncias.enums.TipoRegiones;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

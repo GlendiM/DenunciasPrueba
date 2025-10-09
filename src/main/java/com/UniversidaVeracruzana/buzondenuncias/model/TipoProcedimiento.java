@@ -1,4 +1,4 @@
-package com.UniversidaVeracruzana.model;
+package com.UniversidaVeracruzana.buzondenuncias.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

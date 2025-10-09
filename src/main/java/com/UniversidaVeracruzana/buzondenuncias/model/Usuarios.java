@@ -1,8 +1,8 @@
-package com.UniversidaVeracruzana.model;
+package com.UniversidaVeracruzana.buzondenuncias.model;
 
-import com.UniversidaVeracruzana.enums.RolesEnum;
-import com.UniversidaVeracruzana.enums.StatusUsuario;
-import com.UniversidaVeracruzana.enums.TipoUsuario;
+import com.UniversidaVeracruzana.buzondenuncias.enums.RolesEnum;
+import com.UniversidaVeracruzana.buzondenuncias.enums.Status_User;
+import com.UniversidaVeracruzana.buzondenuncias.enums.TipoUsuario;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -70,9 +70,8 @@ public class Usuarios {
     @Column(name = "rolFK", nullable = false)
     private RolesEnum rol; //converter
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false) 
-    private StatusUsuario status; //converter
+    @Column(name = "statusFK", nullable = false) 
+    private Status_User status; 
     
     // Relaciones / llaves foraneas
     @ManyToOne(fetch = FetchType.LAZY)

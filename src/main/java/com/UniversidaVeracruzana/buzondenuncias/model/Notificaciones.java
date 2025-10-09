@@ -1,7 +1,7 @@
-package com.UniversidaVeracruzana.model;
+package com.UniversidaVeracruzana.buzondenuncias.model;
 
 import java.time.LocalDateTime;
-import com.UniversidaVeracruzana.enums.EstadoNotificacion;
+import com.UniversidaVeracruzana.buzondenuncias.enums.EstadoNotificacion;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

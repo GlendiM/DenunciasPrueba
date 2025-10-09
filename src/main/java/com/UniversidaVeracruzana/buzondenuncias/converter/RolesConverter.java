@@ -1,7 +1,7 @@
-package com.UniversidaVeracruzana.converter;
+package com.UniversidaVeracruzana.buzondenuncias.converter;
 
 
-import com.UniversidaVeracruzana.enums.RolesEnum;
+import com.UniversidaVeracruzana.buzondenuncias.enums.RolesEnum;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

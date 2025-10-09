@@ -1,6 +1,6 @@
-package com.UniversidaVeracruzana.converter;
+package com.UniversidaVeracruzana.buzondenuncias.converter;
 
-import com.UniversidaVeracruzana.enums.EstadoDenuncia;
+import com.UniversidaVeracruzana.buzondenuncias.enums.EstadoDenuncia;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

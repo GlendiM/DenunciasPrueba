@@ -1,6 +1,6 @@
-package com.UniversidaVeracruzana.model;
+package com.UniversidaVeracruzana.buzondenuncias.model;
 
-import com.UniversidaVeracruzana.enums.EstadoDenuncia;
+import com.UniversidaVeracruzana.buzondenuncias.enums.EstadoDenuncia;
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.AttributeOverrides;
 import jakarta.persistence.Column;
@@ -54,7 +54,7 @@ public class Denuncias {
 
     // Relaciones / llaves foraneas
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DenuncanteFK")
+    @JoinColumn(name = "DenuncianteFK")
     private Usuarios denunciante;
 
     @ManyToOne(fetch = FetchType.LAZY)

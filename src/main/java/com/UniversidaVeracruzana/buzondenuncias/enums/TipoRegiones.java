@@ -1,4 +1,4 @@
-package com.UniversidaVeracruzana.enums;
+package com.UniversidaVeracruzana.buzondenuncias.enums;
 
 // regiones de la Universidad Veracruzana
 public enum TipoRegiones {

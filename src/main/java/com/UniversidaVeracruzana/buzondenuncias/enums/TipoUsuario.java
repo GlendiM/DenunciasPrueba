@@ -1,4 +1,4 @@
-package com.UniversidaVeracruzana.enums;
+package com.UniversidaVeracruzana.buzondenuncias.enums;
 
 // Tipo de usuario en el sistema
 public enum TipoUsuario {

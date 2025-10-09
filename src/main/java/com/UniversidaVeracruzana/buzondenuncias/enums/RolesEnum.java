@@ -1,4 +1,4 @@
-package com.UniversidaVeracruzana.enums;
+package com.UniversidaVeracruzana.buzondenuncias.enums;
 
 import java.util.stream.Stream;
 import lombok.AllArgsConstructor;
