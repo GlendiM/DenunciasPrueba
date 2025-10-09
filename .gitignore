@@ -1,0 +1,44 @@
+# ───────────────────────────────
+#   DOCUMENTOS / HELP
+# ───────────────────────────────
+HELP.md
+
+# ───────────────────────────────
+#   MAVEN BUILD
+# ───────────────────────────────
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ───────────────────────────────
+#   LOGS
+# ───────────────────────────────
+*.log
+
+# ───────────────────────────────
+#   ENTORNOS / CREDENCIALES
+#   (propiedades sensibles)
+# ───────────────────────────────
+application.properties
+application.yml
+*.env
+
+# ───────────────────────────────
+#   IDE: SPRING TOOLS SUITE (STS)
+# ───────────────────────────────
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
+# ───────────────────────────────
+#   IDE: VS CODE
+# ───────────────────────────────
+.vscode/
+
+# ───────────────────────────────
+#   SISTEMA OPERATIVO
+# ───────────────────────────────
+.DS_Store       # macOS
+Thumbs.db       # Windows
