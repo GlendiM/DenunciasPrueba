@@ -141,6 +141,13 @@ public class UsuarioService {
     }
 
     //CONSULTAS ESPECIFICAAS - REPOSITORY
+
+    @Transactional(readOnly = true)
+    public Optional<UsuarioResponseDTO> findByMatricula(String matricula) {
+        return usuarioRepository.findByMatricula(matricula)
+                .map(usuarioMapper::toDto);
+    }
+
     @Transactional(readOnly = true)
     public Optional<UsuarioResponseDTO> findByCorreo(String correoElectronico){
         return usuarioRepository.findByCorreoElectronico(correoElectronico)
@@ -167,4 +174,7 @@ public class UsuarioService {
                 .stream().filter(usuario -> usuario.getRol() == rol)
                 .map(usuarioMapper::toDto).collect(Collectors.toList());
     }
+
+
+
 } 
