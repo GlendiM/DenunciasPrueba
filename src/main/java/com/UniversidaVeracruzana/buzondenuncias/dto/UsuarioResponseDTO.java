@@ -18,7 +18,7 @@ public class UsuarioResponseDTO {
     private String matricula;
     private String numeroPersonal;
     private String nombreCompleto;
-    private String correroElectronico;
+    private String correoElectronico;
     private Integer edad;
     private String sexo;
     private String identidadSexogenerica;

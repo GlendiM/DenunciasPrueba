@@ -9,7 +9,7 @@ import com.UniversidaVeracruzana.buzondenuncias.dto.LoginRequestDTO;
 import com.UniversidaVeracruzana.buzondenuncias.dto.UsuarioRequestDTO;
 import com.UniversidaVeracruzana.buzondenuncias.dto.UsuarioResponseDTO;
 import com.UniversidaVeracruzana.buzondenuncias.enums.RolesEnum;
-import com.UniversidaVeracruzana.buzondenuncias.mapper.UsuariosMapper;
+import com.UniversidaVeracruzana.buzondenuncias.mapper.UsuarioMapper;
 import com.UniversidaVeracruzana.buzondenuncias.model.EntidadAcademica;
 import com.UniversidaVeracruzana.buzondenuncias.model.Regiones;
 import com.UniversidaVeracruzana.buzondenuncias.model.Usuarios;
@@ -27,7 +27,8 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final RegionRepository regionRepository;
     private final EntidadAcademicaRepository academicaRepository;
-    private final UsuariosMapper usuarioMapper;
+
+    private final UsuarioMapper usuarioMapper;
 
     // CONSULTA GENERAL
     @Transactional(readOnly = true)

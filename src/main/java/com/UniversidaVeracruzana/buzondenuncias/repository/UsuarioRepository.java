@@ -1,11 +1,10 @@
 package com.UniversidaVeracruzana.buzondenuncias.repository;
 
-import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import com.UniversidaVeracruzana.buzondenuncias.dto.LoginRequestDTO;
-import com.UniversidaVeracruzana.buzondenuncias.dto.UsuarioResponseDTO;
 import com.UniversidaVeracruzana.buzondenuncias.enums.RolesEnum;
 import com.UniversidaVeracruzana.buzondenuncias.model.EntidadAcademica;
 import com.UniversidaVeracruzana.buzondenuncias.model.Usuarios;
@@ -13,8 +12,6 @@ import com.UniversidaVeracruzana.buzondenuncias.model.Usuarios;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuarios, Integer> {
-
-    Optional<UsuarioResponseDTO> login(LoginRequestDTO loginRequest);
 
     //Encuentra un usuario por su correo 
     Optional<Usuarios> findByCorreoElectronico(String correoElectronico);
@@ -27,9 +24,11 @@ public interface UsuarioRepository extends JpaRepository<Usuarios, Integer> {
 
     // Encontrar al coordinador de una entidad académica específica
     //IMPORTANTE
-    Optional<Usuarios> findByRolAndEntidadAcademica(RolesEnum rol, EntidadAcademica entidadAcademica);
-    Optional<UsuarioResponseDTO> findCoordinadorByEntidad(RolesEnum rol, Integer entidadAcademicaId);
-    List<UsuarioResponseDTO> findByRol(RolesEnum rol);
-
+    @Query("SELECT u FROM Usuarios u WHERE u.rol = :rol AND u.entidadAcademica = :entidadAcademica")
+    Optional<Usuarios> findByRolAndEntidadAcademica(@Param("rol") RolesEnum rol, 
+                                                   @Param("entidadAcademica") EntidadAcademica entidadAcademica);
 
 }
+    
+
+
