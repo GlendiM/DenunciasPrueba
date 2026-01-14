@@ -3,8 +3,10 @@ package com.UniversidaVeracruzana.buzondenuncias.service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.UniversidaVeracruzana.buzondenuncias.config.security.ServiceException;
 import com.UniversidaVeracruzana.buzondenuncias.dto.LoginRequestDTO;
 import com.UniversidaVeracruzana.buzondenuncias.dto.UsuarioRequestDTO;
 import com.UniversidaVeracruzana.buzondenuncias.dto.UsuarioResponseDTO;
@@ -49,7 +51,8 @@ public class UsuarioService {
     public UsuarioResponseDTO create(UsuarioRequestDTO usuarioRequestDTO) {
         // Validar unicidad de correo usando findByCorreoElectronico
         if (usuarioRepository.findByCorreoElectronico(usuarioRequestDTO.getCorreoElectronico()).isPresent()){
-            throw new RuntimeException("El correo electronico ya está registrado");
+            throw new ServiceException("Registro Duplicado",
+            "El correo electronico ya está registrado",HttpStatus.CONFLICT);
         }
         // Buscar y asignar region y entidad academica
         Regiones region = null;
@@ -80,7 +83,7 @@ public class UsuarioService {
         if(usuarioRequestDTO.getCorreoElectronico() != null &&
             !usuarioRequestDTO.getCorreoElectronico().equals(existingUsuario.getCorreoElectronico())) {
                 Optional<Usuarios> usuarioConCorreo = usuarioRepository.findByCorreoElectronico(usuarioRequestDTO.getCorreoElectronico());
-                if(usuarioConCorreo.isPresent() && !usuarioConCorreo.get().getUsuarioId().equals(id)) {
+                if(usuarioConCorreo.isPresent() && !usuarioConCorreo.get().getUsuarioID().equals(id)) {
                     throw new RuntimeException("El Correo Electrónico ya está en uso por otro usuario");
             }
         }

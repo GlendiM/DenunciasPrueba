@@ -38,6 +38,7 @@ public class Denuncias {
         @AttributeOverride(name = "apellidoP", column = @Column(name = "nombre_acusado_apellidoP")),
         @AttributeOverride(name = "apellidoM", column = @Column(name = "nombre_acusado_apellidoM"))
     })
+    
     private NomCompleto nombreAcusado;
 
     @Column(name = "descripcion", nullable = false, columnDefinition = "TEXT")

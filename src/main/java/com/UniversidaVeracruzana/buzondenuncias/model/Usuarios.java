@@ -31,7 +31,7 @@ public class Usuarios {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer usuarioId;
+    private Integer UsuarioID;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_user")
@@ -46,7 +46,7 @@ public class Usuarios {
     @Embedded
     private NomCompleto nombre;
 
-    @Column(name = "correo_electronunico", unique = false, length = 100)
+    @Column(name = "correo_electronico", unique = false, length = 100)
     private String correoElectronico;
 
     @Column(name = "password", length = 255)
